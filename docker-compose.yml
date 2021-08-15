@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  perjo927-express-api-starter:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: perjo927-express-api-starter
+    container_name: perjo927-express-api-starter
+    env_file: .env
+    environment:
+      NODE_ENV: development
+      PORT: ${PORT}
+      ACCESS_TOKEN_SECRET: ${ACCESS_TOKEN_SECRET}
+    working_dir: /app

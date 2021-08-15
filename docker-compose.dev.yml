@@ -1,0 +1,13 @@
+services:
+  perjo927-express-api-starter:
+    build:
+      target: development
+    environment:
+      NODE_ENV: development
+    ports:
+      - 0.0.0.0:5000:5000
+      - 9229:9229
+    volumes:
+      - ./:/app
+    restart: unless-stopped
+    command: npm run start:dev:debug

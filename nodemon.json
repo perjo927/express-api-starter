@@ -1,0 +1,9 @@
+{
+  "ignore": ["*.log, test/**/*.test.js", ".git", "node_modules/**/node_modules"],
+  "ext": "js,json",
+  "watch": ["*", ".env"],
+  "verbose": true,
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

@@ -1,0 +1,10 @@
+services:
+  perjo927-express-api-starter:
+    build:
+      target: production
+    environment:
+      NODE_ENV: production
+    ports:
+      - 0.0.0.0:5000:5000
+    restart: always
+    command: npm run start
