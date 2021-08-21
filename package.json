@@ -1,6 +1,8 @@
 {
   "name": "perjo927/express-api-starter",
   "version": "1.0.0",
+  "description": "An Express REST API Starter",
+  "main": "./bin/www.js",
   "scripts": {
     "start:dev": "nodemon ./bin/www.js",
     "start:dev:debug": "nodemon --inspect=0.0.0.0:9229 ./bin/www.js",

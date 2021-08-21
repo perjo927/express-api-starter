@@ -4,12 +4,12 @@
 
 A simple Express-based versioned API that implements both public and protected routes. The authentication is handled by passport. After calling the `/authorize` route with an id token, verified by Firebase or provider of choice, a JWT access token is generated (needs the environment variable ACCESS_TOKEN_SECRET to be set) returned to the consumer. Consumers can then pass the token in the Authorization header as Bearer to access routes with authentication, by default `/test-authorize`. The Firebase integration is mocked away in the case it would not the the desired integration, however it can be toggled back, see instructions further down.
 
-See test client repo [TODO:]() for example usage!
+See the [Test Client Repository](https://github.com/perjo927/express-api-starter-test-client) for example usage!
 
 - Firebase (disabled by default) is used as a database.
 - For testing, SuperTest and Jest are being used.
 - Linting and formatting are managed by ESLint and Prettier.
-- CI/CD is handled through Github Actions.
+- CI/CD is handled through Github Actions, see the `.github` folder.
 - The application can also be packaged as a docker container.
 - Environment variables can be provided locally through a .env file.
 - For logging, winston and morgan are being used.
@@ -47,9 +47,11 @@ Not found routes respond with 404 and server errors with 5XX.
     PORT=<Your favorite port number>
     ACCESS_TOKEN_SECRET=<Generate yourself>
     ```
+
 - If you are using Firebase, you can choose to provide a service account json file (see: `data/service-account.js`). You also need to require firebase-admin (see: `data/admin.js`)
 
 ## Production
+
 Choose your favorite provider; build docker using the production script, push and deploy the docker container and remember to configure the environment variables in the production environment.
 
 ## Install
@@ -72,6 +74,7 @@ Choose your favorite provider; build docker using the production script, push an
 `$ npm run stop:docker`
 
 ## Test
+
 The project is covered almost 100% by unit tests out of the box.
 
 ### Single Run
