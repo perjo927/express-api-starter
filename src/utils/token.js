@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const env = require("./env");
-const { logger } = require("./logger");
+const logger = require("./logger");
 
 const thisLocation = "utils/token";
 

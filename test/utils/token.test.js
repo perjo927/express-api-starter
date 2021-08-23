@@ -1,6 +1,6 @@
 const { TEST_USER_CREDENTIALS } = require("../../src/data/__mocks__/admin");
 const env = require("../../src/utils/env");
-const { logger } = require("../../src/utils/logger");
+const logger = require("../../src/utils/logger");
 const { getSecret, generateAccessToken } = require("../../src/utils/token");
 
 describe("utils/token", () => {

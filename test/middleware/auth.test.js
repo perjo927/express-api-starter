@@ -2,7 +2,7 @@ jest.requireActual("../../src/middleware/passportHandler");
 
 const passport = require("passport");
 const request = require("supertest");
-const { logger } = require("../../src/utils/logger");
+const logger = require("../../src/utils/logger");
 const env = require("../../src/utils/env");
 const { getUser, init } = require("../../src/middleware/auth");
 
