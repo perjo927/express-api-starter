@@ -23,12 +23,17 @@ describe("/api/v1/test-auth", () => {
       .expect(405, '{"message":"Method Not Allowed"}', done);
   });
 
-  test("GET responds with 200", () => {
+  test("GET responds with 200", (done) => {
     request(app)
       .get(testAuthUrl)
       .set("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8")
       .set("Accept", "application/json")
-      .expect("Content-Type", /json/)
-      .expect(200);
+      .expect("Content-Type", "text/html; charset=utf-8")
+      .expect(200)
+      .then((r) => {
+        expect(r.text).toEqual("Authorized");
+        done();
+      })
+      .catch((err) => done(err));
   });
 });

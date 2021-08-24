@@ -1,7 +1,7 @@
 const asyncMiddleware = require("../../src/middleware/asyncHandler");
 
 describe("async middleware", () => {
-  test("should wrap async route in promise", () => {
+  test("should wrap async route in promise", (done) => {
     const callback = jest.fn(
       (req, res, next) =>
         new Promise((resolve) => {
@@ -15,10 +15,11 @@ describe("async middleware", () => {
 
     asynMiddleWareFnPromise.then((result) => {
       expect(result).toStrictEqual({ next: "next", req: "req", res: "res" });
+      done();
     });
   });
 
-  test("should wrap async route in promise", () => {
+  test("should wrap async route in promise", (done) => {
     const next = jest.fn();
     const callback = jest.fn(
       () =>
@@ -33,6 +34,7 @@ describe("async middleware", () => {
 
     asynMiddleWareFnPromise.then(() => {
       expect(next).toHaveBeenCalledWith(new Error("fail"));
+      done();
     });
   });
 });

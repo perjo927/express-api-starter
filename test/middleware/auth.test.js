@@ -118,7 +118,7 @@ describe("test API with JWT authentication", () => {
       });
   });
 
-  test("GET responds with 200 after authorizing", () => {
+  test("GET responds with 200 after authorizing", (done) => {
     const [expectedAccessToken] = generateAccessToken(
       TEST_USER_CREDENTIALS
     ).split(".");
@@ -147,8 +147,13 @@ describe("test API with JWT authentication", () => {
           )
           .set("Accept", "application/json")
           .set("Authorization", authHeader)
-          .expect("Content-Type", /json/)
-          .expect(200);
+          .expect("Content-Type", "text/html; charset=utf-8")
+          .expect(200)
+          .then((r) => {
+            expect(r.text).toEqual("Authorized");
+            done();
+          })
+          .catch((err) => done(err));
       });
   });
 
