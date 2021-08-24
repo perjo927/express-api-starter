@@ -16,7 +16,7 @@ See the [Test Client Repository](https://github.com/perjo927/express-api-starter
 
 ## Routes
 
-Endpoint: `api/v1/`
+Endpoint: `/api/v1/`
 
 The starter repo comes with three routes by default, as described below. One for alive checking, one for retrieving the access token plus one for testing the token.
 
@@ -56,7 +56,7 @@ Choose your favorite provider; build docker using the production script, push an
 
 ## Install
 
-`$ git clone https://github.com/perjo927/express-api-starter
+`$ git clone https://github.com/perjo927/express-api-starter`
 
 `$ cd perjo927/express-api-starter`
 
